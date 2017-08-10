@@ -289,7 +289,7 @@ alpha:1.0]
 ///////////////// TWEETER OBJECT //////////////////
 - (void)createTwitterView
 {
-    TWTRTweetView *tweetView = [[TWTRTweetView alloc] init];
+    TWTRTweetView *tweetView = [[TWTRTweetView alloc] initWithTweet:nil style:TWTRTweetViewStyleRegular];
     self.tweetView = tweetView;
     self.tweetView.translatesAutoresizingMaskIntoConstraints = NO;
     self.twitterDidLoadWithSuccess = NO;

@@ -7,7 +7,7 @@
     static TWTRTweetView *tweetView = nil;;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        tweetView = [[TWTRTweetView alloc] initWithTweet:nil style:TWTRTweetViewStyleCompact];
+        tweetView = [[TWTRTweetView alloc] initWithTweet:nil style:TWTRTweetViewStyleRegular];
     });
     return tweetView;
 }
