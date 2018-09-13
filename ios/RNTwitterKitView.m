@@ -59,6 +59,10 @@ alpha:1.0]
 @property (nonatomic) NSNumber *tweetHeight;
 @property (nonatomic) NSNumber *tweetWidth;
 
+//disable user interaction
+@property (nonatomic) BOOL disableUserInteractionFlagChanged;
+@property (nonatomic) BOOL disableUserInteraction;
+
 @property (nonatomic) BOOL posponedResize;
 @end
 
@@ -151,6 +155,12 @@ alpha:1.0]
     self.tweetBackgroundColor = backgroundColor;
 }
 
+//disable user interaction
+- (void)setDISABLEUSERINTERACTION:(BOOL)disableUserInteraction
+{
+    self.disableUserInteractionFlagChanged = YES;
+    self.disableUserInteraction = disableUserInteraction;
+}
 
 #pragma mark - views layout
 /////////////////////// VIEW LAYOUT /////////////
@@ -239,6 +249,10 @@ alpha:1.0]
     
     if (self.backgroundColorFlagChanged) {
         self.tweetView.backgroundColor = UIColorFromRGB([self.tweetBackgroundColor unsignedIntegerValue]);
+    }
+    
+    if (self.disableUserInteractionFlagChanged) {
+        self.tweetView.userInteractionEnabled = !self.disableUserInteraction;
     }
     
 //    if ([[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:@"twitter://"]]) {
