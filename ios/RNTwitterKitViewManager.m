@@ -3,7 +3,7 @@
 #if __has_include(<React/RCTUIManagerUtils.h>)
 #import <React/RCTUIManagerUtils.h>
 #endif
-#import <TwitterKit/TwitterKit.h>
+#import <TwitterKit/TWTRKit.h>
 
 #import "RNTwitterKitViewManager.h"
 #import "RNTwitterKitView.h"
